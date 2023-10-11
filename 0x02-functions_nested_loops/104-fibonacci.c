@@ -6,17 +6,18 @@
  */
 int main(void)
 {
-	unsigned long fib1 = 1, fib2 = 2, nextTerm;
-	int count;
+	int i;
+	long fib1 = 1, fib2 = 2, nextTerm;
 
-	printf("%lu, %lu", fib1, fib2);
+	printf("%ld, %ld", fib1, fib2);
 
-	for (count = 3; count <= 98; ++count)
+	for (i = 3; i <= 98; ++i)
 	{
 		nextTerm = fib1 + fib2;
-		printf(", %lu", nextTerm);
 		fib1 = fib2;
 		fib2 = nextTerm;
+
+		printf(", %ld", nextTerm);
 	}
 
 	printf("\n");
