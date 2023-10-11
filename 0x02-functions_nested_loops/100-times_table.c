@@ -18,30 +18,25 @@ void print_times_table(int n)
 
 				if (j != 0)
 					_putchar(',');
+				_putchar(' ');
 
 				if (result < 10)
 				{
 					_putchar(' ');
 					_putchar(' ');
-					digit = result + '0';
-					_putchar(digit);
+					_putchar(result + '0');
 				}
 				else if (result < 100)
 				{
 					_putchar(' ');
-					digit = (result / 10) + '0';
-					_putchar(digit);
-					digit = (result % 10) + '0';
-					_putchar(digit);
+					_putchar((result / 10) + '0');
+					_putchar((result % 10) + '0');
 				}
 				else
 				{
-					digit = (result / 100) + '0';
-					_putchar(digit);
-					digit = ((result / 10) % 10) + '0';
-					_putchar(digit);
-					digit = (result % 10) + '0';
-					_putchar(digit);
+					_putchar((result / 100) + '0');
+					_putchar(((result / 10) % 10) + '0');
+					_putchar((result % 10) + '0');
 				}
 			}
 			_putchar('\n');
