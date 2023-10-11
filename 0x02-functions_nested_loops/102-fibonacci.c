@@ -7,14 +7,14 @@
 int main(void)
 {
 	int i;
-	long long int fib1 = 1, fib2 = 2, nextTerm;
+	long fib1 = 1, fib2 = 2, nextTerm;
 
-	printf("%lld, %lld", fib1, fib2);
+	printf("%ld, %ld", fib1, fib2);
 
 	for (i = 3; i <= 50; ++i)
 	{
 		nextTerm = fib1 + fib2;
-		printf(", %lld", nextTerm);
+		printf(", %ld", nextTerm);
 		fib1 = fib2;
 		fib2 = nextTerm;
 	}
