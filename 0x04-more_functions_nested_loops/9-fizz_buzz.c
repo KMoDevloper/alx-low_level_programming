@@ -3,6 +3,8 @@
  * main - Entry point, prints Fizz for multiples of 3,
  * Buzz for multiples of 5,and FizzBuzz for multiples of both 3 and 5,
  * else prints the number.
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
