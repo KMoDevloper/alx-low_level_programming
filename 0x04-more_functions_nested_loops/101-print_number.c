@@ -13,10 +13,23 @@ void print_number(int n)
 		n = -n;
 	}
 
-	if (n / 10 != 0)
+	if (n == 0)
 	{
-		print_number(n / 10);
+		_putchar('0');
+		return;
 	}
 
-	_putchar((n % 10) + '0');
+	int reversedNumber = 0;
+	int originalNumber = n;
+	while (n != 0)
+	{
+		reversedNumber = reversedNumber * 10 + n % 10;
+		n /= 10;
+	}
+
+	while (reversedNumber != 0)
+	{
+		_putchar(reversedNumber % 10 + '0');
+		reversedNumber /= 10;
+	}
 }
