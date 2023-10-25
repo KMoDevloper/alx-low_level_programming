@@ -6,11 +6,11 @@
  *
  * Return: The square root of n, or -1 if n does not have a natural squre root.
  */
-int sqrt_recursive(int n, int guess)
+int _sqrt_recursive(int n, int guess)
 {
 	if (guess * guess == n)
 		return (guess);
 	if (guess * guess > n)
 		return (-1);
-	return (sqrt_recursive(n, guess + 1));
+	return (_sqrt_recursive(n, guess + 1));
 }
