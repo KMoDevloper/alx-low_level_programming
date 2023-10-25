@@ -13,7 +13,7 @@ int is_prime_recursive(int n, int i);
 int _strlen(char *s);
 int is_palindrome_recursive(char *s, int start, int end);
 int is_palindrome(char *s);
-
+int wildcmp(char *s1, char *s2);
 
 
 #endif /* MAIN_H */
