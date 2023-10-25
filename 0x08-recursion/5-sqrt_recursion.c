@@ -1,4 +1,5 @@
 #include "main.h"
+int _sqrt_recursive(int n, int guess);
 /**
  * _sqrt_recursion - Calculates the square root of number recursively.
  * @n: The number to find the square root of.
