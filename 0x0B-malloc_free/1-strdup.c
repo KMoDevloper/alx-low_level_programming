@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * _strdup - duplicates a tring using malloc
+ * _strdup - duplicates a string using malloc
  * @str: input string
  *
  * Return: pointer to newly allocated space containing the duplicated string,
@@ -11,7 +11,7 @@
 
 char *_strdup(char *str)
 {
-	char *suplicate;
+	char *duplicate;
 	unsigned int i, len = 0;
 
 	if (str == NULL)
