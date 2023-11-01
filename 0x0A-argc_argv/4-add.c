@@ -1,35 +1,44 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * main - Adds positive numbers passed as arguments
  * @argc: Argument count
  * @argv: Argument vector
  *
- * Return: 0 if successful, 1 if there are non-digit characters, 0 if no arguments
+ * Return: always 0
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int i;
+	unsigned int k, sum = 0;
+	char *e;
 
-	if (argc == 1)
+	if (argc > 1)
 	{
-		printf("0\n");
-		return (0);
-	}
-
-	for (i = 1; i < argc; i++)
-	{
-		if (!is_positive_number(argv[i]))
+		for (i = 1; i < argc; i++)
 		{
-			printf("Error\n");
-			return (1);
+			e = argv[i];
+
+			for (k = 0; k < strlen(e); k++)
+			{
+				if (e[k] < 48 || e[k] > 57)
+				{
+					printf("Error\n");
+					return (1);
+				}
+			}
+
+			sum += atoi(e);
 		}
 
-		sum += atoi(argv[i]);
+		printf("%d\n", sum);
 	}
-
-	printf("%d\n", sum);
+	else
+	{
+		printf("0\n");
+	}
 	return (0);
 }
