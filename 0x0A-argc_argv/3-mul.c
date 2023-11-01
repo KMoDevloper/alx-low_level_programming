@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -8,11 +9,11 @@
  *
  * Return: 0 of successful, 1 if there are not enough arguments
  */
-intmain(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int num1, num2, result;
 
-	if (atgc != 3)
+	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
@@ -23,7 +24,7 @@ intmain(int argc, char *argv[])
 
 	result = num1 * num2;
 
-	printf("d\n", result);
+	printf("%d\n", result);
 
 	return (0);
 }
