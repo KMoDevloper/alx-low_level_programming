@@ -3,59 +3,6 @@
 #include <stdlib.h>
 
 /**
- * main - multiplies two positive numbers
- * @argc: number of command-line arguments
- * @argv: array of command-line arguments
- * Return: 0 on success, 98 on failure
- */
-int main(int argc, char *argv[])
-{
-	if (argc != 3)
-	{
-		printf("Error\n");
-		return (98);
-	}
-
-	char *num1 = argv[1];
-	char *num2 = argv[2];
-
-	if (!is_positive_number(num1) || !is_positive_number(num2))
-	{
-		printf("Error\n");
-		return (98);
-	}
-
-	char *result = multiply(num1, num2);
-
-	if (result == NULL)
-	{
-		printf("Error\n");
-		return (98);
-	}
-
-	printf("%s\n", result);
-	free(result);
-
-	return (0);
-}
-
-/**
- * is_positive_number - checks if a string represents a positive number
- * @str: input string
- * Return: 1 if positive number, 0 otherwise
- */
-int is_positive_number(char *str)
-{
-	while (*str)
-	{
-		if (*str < '0' || *str > '9')
-			return (0);
-		str++;
-	}
-	return (1);
-}
-
-/**
  * multiply - multiplies two positive numbers represented as strings
  * @num1: first number
  * @num2: second number
@@ -63,13 +10,20 @@ int is_positive_number(char *str)
  */
 char *multiply(char *num1, char *num2)
 {
+	if (num1 == NULL || num2 == NULL || !is_positive_number(num1) || !is_positive_number(num2))
+	{
+		return (NULL);
+	}
+
 	int len1 = strlen(num1);
 	int len2 = strlen(num2);
 	int len3 = len1 + len2;
 	char *result = malloc(len3 + 1);
 
 	if (result == NULL)
+	{
 		return (NULL);
+	}
 
 	int *res = calloc(len3, sizeof(int));
 
@@ -92,7 +46,6 @@ char *multiply(char *num1, char *num2)
 			carry = sum / 10;
 			res[i + j + 1] = sum % 10;
 		}
-
 		res[i] += carry;
 	}
 
@@ -100,7 +53,6 @@ char *multiply(char *num1, char *num2)
 
 	while (pos < len3 && res[pos] == 0)
 		pos++;
-
 	if (pos == len3)
 		result[0] = '0';
 	else
