@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < bytes; i++)
 	{
-		printf("%02x", adress[i]);
+		printf("%02x", address[i]);
 		if (i < bytes - 1)
 			printf(" ");
 	}
