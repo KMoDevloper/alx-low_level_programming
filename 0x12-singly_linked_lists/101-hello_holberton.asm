@@ -7,6 +7,7 @@ extern printf
 extern exit
 
 main:
+sub rsp, 8 ; Align the stack
 mov rdi, hello
 call printf
 
