@@ -10,5 +10,5 @@ main:
 mov rdi, hello
 call printf
 
-mov rdi, 0 ; Status code
+mov rdi, 1 ; intentionally setting a non-zero status code
 call exit
