@@ -10,6 +10,6 @@ main:
 sub rsp, 8 ; Align the stack
 mov rdi, hello
 call printf
-
-mov rdi, 1 ; intentionally setting a non-zero status code
-call exit
+add  rsp, 8 ; Clean up the stack
+mov eax, 0 ; Return 0 from main
+ret
