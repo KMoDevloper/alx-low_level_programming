@@ -4,11 +4,11 @@ hello db "Hello, Holberton", 0
 section .text
 global main
 extern printf
+extern exit
 
 main:
-sub rsp, 8 ; Align the stack (must be a multiple of 16 before calling printf)
 mov rdi, hello
 call printf
-add rsp, 8 ; Clean up the stack
-xor eax, eax ; Set return value to 0
-ret
+
+mov rdi, 0 ; Status code
+call exit
