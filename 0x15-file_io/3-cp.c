@@ -11,7 +11,7 @@
  * @argv: An array of strings containing the arguments.
  * Return: 0 on success, or an exit code on failure.
  */
-int main(int argc, char*argv[])
+int main(int argc, char *argv[])
 {
 	int fd_from, fd_to, read_result, write_result;
 	char buffer[BUFFER_SIZE];
