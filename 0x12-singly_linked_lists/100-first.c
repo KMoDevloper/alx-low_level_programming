@@ -1,12 +1,12 @@
 #include <stdio.h>
 
-void print_before_main(void) __attribute__((constructor));
-
 /**
- * print_before_main - Prints a message before the main function.
+ * bmain - function executed before main
+ * Return: no return.
  */
-void print_before_main(void)
+
+void __attribute__ ((constructor)) bmain()
 {
-	printf("You're beat! and yet, you nust allow,\n"
-		"I bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow");
+	printf(",\nI bore my house upon my back!\n");
 }

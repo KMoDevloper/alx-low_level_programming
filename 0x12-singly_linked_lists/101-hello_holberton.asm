@@ -1,15 +1,15 @@
-section .data
-hello db "Hello, Holberton", 0
+	SECTION .data
+msg:	db "Hello, Holberton", 0
+fmt:	db "%s", 10, 0
 
-section .text
-global main
-extern printf
-extern exit
-
+	SECTION .text
+	extern printf
+	global main
 main:
-sub rsp, 8 ; Align the stack
-mov rdi, hello
-call printf
-add  rsp, 8 ; Clean up the stack
-mov eax, 0 ; Return 0 from main
-ret
+	mov esi, msg
+	mov edi, fmt
+	mov eax, 0
+	call printf
+
+	mov eax, 0
+	ret
